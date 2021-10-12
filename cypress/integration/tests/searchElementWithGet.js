@@ -12,6 +12,7 @@ function login() {
   cy.get(inputContraseña).type("Prueba1234");
   cy.waitFor(botonIngresar);
   cy.get(botonIngresar).click();
+  cy.waitFor(tituloSeccion)
   cy.get(tituloSeccion).contains("Sucursales");
 }
 
@@ -32,6 +33,7 @@ var botonIngresar = "#idBtnSubmit";
 var tituloSeccion = ".active > .iconlink__text";
 var barraBusqueda = "#search";
 var nombreSucursalDetalle = "cy.get('.card__title')";
+var terminalesSeccion= '[href="/auth/terminal"]';
 
 export {
   BWA_URL,
@@ -41,7 +43,9 @@ export {
   tituloSeccion,
   nombreSucursalDetalle,
   barraBusqueda,
+  terminalesSeccion,
   login,
   validarSucursalEncontrada,
-  buscarSucursal,
+  buscarSucursal
+  
 };
