@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const LOADING_BACKGROUND= ':nth-child(3) > .loading-background';
+
+Cypress.Commands.add('waitLoading', () => {
+    cy.get(LOADING_BACKGROUND,{"timeout":5000}).should("not.exist")
+});

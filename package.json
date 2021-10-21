@@ -1,11 +1,21 @@
 {
   "devDependencies": {
-    "cypress": "^8.4.1"
+    "cypress": "^8.4.1",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "multiple-cucumber-html-reporter": "^1.18.0"
   },
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cy:report": "node ./cypress/reports/report.js"
   },
   "dependencies": {
     "cypress-xpath": "^1.6.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/stepDefinitions/",
+    "cucumberJson": {
+      "generate": true
+    }
   }
 }

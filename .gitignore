@@ -131,3 +131,8 @@ dist
 ### Node Patch ###
 # Serverless Webpack directories
 .webpack/
+
+
+##cucumber reports##
+cucumber-report
+cucumber-json
